@@ -1,0 +1,125 @@
+$softviolet: hsl(273, 75%, 66%);
+$softBlue: hsl(240, 73%, 65%);
+$backgroundGradient: linear-gradient(0deg, $softBlue, $softviolet);
+
+$cardBackground: #fff;
+$fontFamily: "Kumbh Sans";
+
+$veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+$softRed: hsl(14, 88%, 65%);
+
+$veryDarkGrayishBlue: hsl(237, 12%, 33%);
+$darkGrayishBlue: hsl(240, 6%, 50%);
+$lightGrayishBlue: hsl(240, 5%, 91%);
+$white: #fff;
+
+$bodyFont: 12px;
+
+body {
+    background: $backgroundGradient;
+    font-family: $fontFamily;
+    background-size: cover;
+    height: 100vh;
+    margin: 0px auto;
+    padding: 0px;
+    font-size: $bodyFont;
+}
+
+.faq-card {
+    background-color: $cardBackground;
+    max-width: 960px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0em;
+    border-radius: 16px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "faq-image faq-group";
+    z-index: -2;
+    overflow: hidden;
+    background-clip: border-box;
+    box-shadow: 1px 1px 15px $darkGrayishBlue;
+    display: grid;
+}
+
+.faq-image {
+    margin-top: 60px;
+    .illustration-box {
+        img {
+            position: absolute;
+            margin-left: -5.8rem;
+            margin-top: 10em;
+        }
+    }
+    .illustration-women {
+        overflow: hidden;
+        img {
+            margin-left: -5rem;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .background-pattern {
+        width: 650px;
+        height: 540px;
+        margin-left: -260px;
+        margin-top: -42em;
+        background-image: url("/images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+}
+
+.faq-group {
+    width: 360px;
+    margin: 0px 20px;
+
+    .faq-title {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        margin-top: 2em;
+    }
+}
+
+.faq-item {
+    border-bottom: 1px solid $lightGrayishBlue;
+    padding: 1em 0em;
+
+    &.active {
+        & > .faq-item-header > a {
+            font-weight: bold;
+            color: $veryDarkDesaturatedBlue;
+        }
+    }
+
+    .faq-item-header {
+        color: $darkGrayishBlue;
+        margin-bottom: 1em;
+        font-weight: bold;
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: $darkGrayishBlue;
+
+            &:hover {
+                color: $softRed;
+            }
+        }
+    }
+
+    .faq-item-body {
+        color: $darkGrayishBlue;
+    }
+}
+
+.faq-item-header > a > span > img {
+    float: right;
+}
+
+.collapsed {
+    display: none;
+}
