@@ -11,9 +11,16 @@ $softRed: hsl(14, 88%, 65%);
 $veryDarkGrayishBlue: hsl(237, 12%, 33%);
 $darkGrayishBlue: hsl(240, 6%, 50%);
 $lightGrayishBlue: hsl(240, 5%, 91%);
+$darkBlue: hsl(240deg 48% 56%);
 $white: #fff;
 
 $bodyFont: 12px;
+
+$breakpoints: (
+    phone: 640px,
+    tablet: 768px,
+    desktop: 1024px,
+) !default;
 
 body {
     background: $backgroundGradient;
@@ -37,7 +44,7 @@ body {
     z-index: -2;
     overflow: hidden;
     background-clip: border-box;
-    box-shadow: 1px 1px 15px $darkGrayishBlue;
+    box-shadow: 1px 1px 15px $darkBlue;
     display: grid;
 }
 
@@ -122,4 +129,57 @@ body {
 
 .collapsed {
     display: none;
+}
+
+@media (max-width: 675px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .faq-card {
+        display: inline-block;
+        margin: 200px 18px;
+        width: 90vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .faq-group {
+        flex-shrink: 0;
+        width: unset;
+        margin-top: 140px;
+        .faq-title {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .background-pattern {
+        display: none;
+    }
+
+    .faq-image {
+        width: 300px;
+        position: absolute;
+        margin-top: -8rem;
+        margin-left: calc(50% - 10rem);
+    }
+
+    .faq-image .illustration-women {
+        width: 20rem;
+    }
+
+    .faq-image .illustration-women img {
+        width: 20rem;
+        margin-left: -25px;
+    }
+
+    .illustration-box {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .faq-card {
+        margin-top: 200px;
+    }
 }
